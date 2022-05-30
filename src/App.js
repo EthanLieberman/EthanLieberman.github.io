@@ -1,9 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css';
 import { Link, Route, Switch } from 'react-router-dom'
 import { useState } from 'react';
 import Home from './view/Home';
 import Footer from './components/Footer';
+import Header from './components/Header';
+import LeftMenu from './components/LeftMenu';
+import Projects from './view/Projects';
 
 
 function App() {
@@ -20,25 +22,33 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={style.bg}>
+      <div className={`${style.Main} ${style.test}`}>
+
+        <Header />
+
+        <div style={{ display: 'flex' }}>
+          <LeftMenu />
+
+          <Switch>
+
+            <Route path={'/home'}>
+              <Home darkmode={darkmode} />
+            </Route>
+
+            <Route path={'/projects'}>
+              <Projects/>
+            </Route>
 
 
+          </Switch>
 
-      <Switch>
-
-        <Route path={'/'}>
-          <Home darkmode={darkmode} />
-        </Route>
-
-        <Route path={'/projects'}>
-          <Projects/>
-        </Route>
+        </div>
 
 
-      </Switch>
+        <Footer />
 
-      <Footer/>
-
+      </div>
     </div>
   );
 }
