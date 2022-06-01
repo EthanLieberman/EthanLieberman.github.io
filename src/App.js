@@ -13,7 +13,7 @@ function App() {
   const [darkmode, setDarkmode] = useState(false)
 
   const modeSelect = () => {    // function called from the button in the header componant to set dark/light modes across app
-    darkmode == false ?    // ternary to check the current boolean and reverse it when function is called
+    darkmode === false ?    // ternary to check the current boolean and reverse it when function is called
       setDarkmode(true)
       :
       setDarkmode(false)

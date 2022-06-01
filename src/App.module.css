@@ -5,4 +5,5 @@
 .bg{
 background-color: rgb(71, 71, 71);
 padding: 1%;
+background-image: url('../public/images/BG.png');
 }
